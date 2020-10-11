@@ -3469,7 +3469,7 @@
         "name": "OPENVPN_PROVIDER",
         "label": "OPENVPN_PROVIDER",
         "description": "https://haugene.github.io/docker-transmission-openvpn/supported-providers/",
-        "default": "MULLVAD"
+        "default": "NORDVPN"
       },
       {
         "name": "OPENVPN_USERNAME",
@@ -3484,8 +3484,23 @@
       {
         "name": "LOCAL_NETWORK",
         "label": "LOCAL_NETWORK",
-        "default": "192.168.0.0/24"
-      }
+        "default": "192.168.1.1/24"
+      },
+      {
+	"name": "NORDVPN_COUNTRY",
+	"label": "NORDVPN_COUNTRY",
+	"default": "CA"
+      },
+      {
+	"name": "NORDVPN_CATEGORY",
+	"label": "NORDVPN_CATEGORY",
+	"default": "P2P"
+      },
+      {
+	"name": "NORDVPN_PROTOCOL",
+	"label": "NORDVPN_PROTOCOL",
+	"default": "TCP"
+      },
     ]
   },
   {
