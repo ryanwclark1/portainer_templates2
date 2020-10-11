@@ -3494,7 +3494,7 @@
       {
 	"name": "NORDVPN_CATEGORY",
 	"label": "NORDVPN_CATEGORY",
-	"default": "P2P"
+	"default": "legacy_p2p"
       },
       {
 	"name": "NORDVPN_PROTOCOL",
