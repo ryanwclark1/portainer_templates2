@@ -3500,7 +3500,7 @@
 	"name": "NORDVPN_PROTOCOL",
 	"label": "NORDVPN_PROTOCOL",
 	"default": "TCP"
-      },
+      }
     ]
   },
   {
