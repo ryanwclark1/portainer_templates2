@@ -133,6 +133,11 @@
         "default": "1000"
       },
       {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
+      },
+      {
         "name": "TZ",
         "label": "TZ",
         "default": "America/Chicago"
@@ -1640,6 +1645,59 @@
   },
   {
     "type": 1,
+    "title": "lidarr",
+    "name": "lidarr",
+    "description": "Lidarr is a music collection manager for Usenet and BitTorrent users.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/lidarr.png",
+    "image": "linuxserver/lidarr:latest",
+    "categories": [
+      "Downloaders",
+      "Music"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      "8686:8686/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "/mnt/docker/config/lidarr"
+      },
+      {
+        "container": "/downloads",
+        "bind": "/mnt/share/downloads"
+      },
+      {
+        "container": "/music",
+        "bind": "/mnt/share/downloads/music"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "1000"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "1000"
+      },
+      {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
+      },
+      {
+        "name": "TZ",
+        "label": "TZ",
+        "default": "America/Chicago"
+      }
+    ]
+  },
+  {
+    "type": 1,
     "title": "Lychee",
     "name": "lychee",
     "description": "Lychee is a free photo-management tool, which runs on your server or web-space. Installing is a matter of seconds. Upload, manage and share photos like from a native application. Lychee comes with everything you need and all your photos are stored securely.",
@@ -2210,6 +2268,11 @@
         "name": "PGID",
         "label": "PGID",
         "default": "1000"
+      },
+      {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
       }
     ]
   },
@@ -2250,7 +2313,12 @@
         "name": "PGID",
         "label": "PGID",
         "default": "1000"
-      }
+      },
+      {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
+      },
     ]
   },
   {
@@ -2476,54 +2544,6 @@
         "name": "PGID",
         "label": "PGID",
         "default": "1000"
-      }
-    ]
-  },
-  {
-    "type": 1,
-    "title": "lidarr",
-    "name": "lidarr",
-    "description": "Lidarr is a music collection manager for Usenet and BitTorrent users.",
-    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/lidarr.png",
-    "image": "linuxserver/lidarr:latest",
-    "categories": [
-      "Downloaders",
-      "Music"
-    ],
-    "platform": "linux",
-    "restart_policy": "unless-stopped",
-    "ports": [
-      "8686:8686/tcp"
-    ],
-    "volumes": [
-      {
-        "container": "/config",
-        "bind": "/portainer/Files/AppData/Config/Lidarr"
-      },
-      {
-        "container": "/downloads",
-        "bind": "/portainer/Downloads"
-      },
-      {
-        "container": "/music",
-        "bind": "/portainer/Music"
-      }
-    ],
-    "env": [
-      {
-        "name": "PUID",
-        "label": "PUID",
-        "default": "1000"
-      },
-      {
-        "name": "PGID",
-        "label": "PGID",
-        "default": "1000"
-      },
-      {
-        "name": "TZ",
-        "label": "TZ",
-        "default": "America/Chicago"
       }
     ]
   },
@@ -2922,15 +2942,15 @@
     "volumes": [
       {
         "container": "/config",
-        "bind": "/portainer/Files/AppData/Config/Radarr"
+        "bind": "/mnt/docker/config/radarr"
       },
       {
         "container": "/downloads",
-        "bind": "/portainer/Downloads"
+        "bind": "/mnt/share/downloads"
       },
       {
         "container": "/movies",
-        "bind": "/portainer/Movies"
+        "bind": "/mnt/share/movies"
       }
     ],
     "env": [
@@ -2943,6 +2963,11 @@
         "name": "PGID",
         "label": "PGID",
         "default": "1000"
+      },
+      {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
       },
       {
         "name": "TZ",
@@ -3304,7 +3329,7 @@
     "volumes": [
       {
         "container": "/config",
-        "bind": "/portainer/Files/AppData/Config/Sonarr"
+        "bind": "/mnt/docker/config/sonarr"
       },
       {
         "container": "/dev/rtc",
@@ -3312,11 +3337,11 @@
       },
       {
         "container": "/tv",
-        "bind": "/portainer/TV"
+        "bind": "/mnt/share/tv"
       },
       {
         "container": "/downloads",
-        "bind": "/portainer/Downloads"
+        "bind": "/mnt/share/downloads"
       }
     ],
     "env": [
@@ -3329,6 +3354,11 @@
         "name": "PGID",
         "label": "PGID",
         "default": "1000"
+      },
+      {
+        "name": "UMASK_SET",
+        "label": "UMASK_SET",
+        "default": "777"
       },
       {
           "name": "TZ",
